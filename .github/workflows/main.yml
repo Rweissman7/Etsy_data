@@ -1,0 +1,22 @@
+name: Display PDF
+
+on:
+  push:
+    branches:
+      - main  # adjust this to your default branch if needed
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  display_pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+     
+      - name: Display PDF
+        uses: actions/upload-artifact@v2
+        with:
+          name: Etsy shop project.pdf  # Adjust this to your PDF filename
+          path: Etsy_data/Etsy shop project.pdf  # Adjust this to the path of your PDF file in the repository
